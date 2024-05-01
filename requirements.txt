@@ -8,4 +8,4 @@ langchain_community
 faiss-cpu
 langchain-pinecone
 python-dotenv
--e .
+-e .    

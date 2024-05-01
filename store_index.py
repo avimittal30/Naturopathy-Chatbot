@@ -6,6 +6,7 @@ import os
 load_dotenv()
 
 
+
 PINECONE_API_KEY=os.environ.get('PINECONE_API_KEY')
 
 extracted_data=extracted_data = load_pdf("data/")
@@ -24,4 +25,7 @@ index = pc.Index(index_name)
 from langchain_pinecone import PineconeVectorStore
 docsearch=PineconeVectorStore.from_documents(documents=text_chunks, embedding=embeddings, index_name=index_name)
 
+
+query='what are the treatments for stomach ulcers?'
+docs=docsearch.similarity_search(query, k=3)
 
